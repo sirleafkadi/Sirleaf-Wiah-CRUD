@@ -12,6 +12,10 @@ import { UpdateComponent } from './update/update.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { DeleteComponent } from './delete/delete.component';
 import { InsertComponent } from './insert/insert.component';
+import { CustomerComponent } from './customer/customer.component';
+import { UpdateCusComponent } from './update-cus/update-cus.component';
+import { DeleteCusComponent } from './delete-cus/delete-cus.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { InsertComponent } from './insert/insert.component';
     UpdateComponent,
     ViewProductComponent,
     DeleteComponent,
-    InsertComponent
+    InsertComponent,
+    CustomerComponent,
+    UpdateCusComponent,
+    DeleteCusComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,

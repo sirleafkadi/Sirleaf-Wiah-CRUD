@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         
         setTimeout(()=>{
           this.user_service.islogin=true;
-        //  this.router.navigate(['home']);
+         this.router.navigate(['home']);
        }, 1800);
 
 

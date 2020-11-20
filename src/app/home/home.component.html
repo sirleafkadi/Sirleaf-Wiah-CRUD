@@ -1,8 +1,15 @@
 <div class="container">
+
+        <h4 style="text-align: center !important; margin-top: 3%;">Manage Product</h4>
+
+
     <div class="row col-md-12 col-12 custyle">
     <table class="table table-striped custab">
-    <thead>
-    <a  class="btn btn-primary btn-xs pull-right" routerLink="/update"><b>+</b> Add new product</a>
+    <thead> 
+        <h5 style="color:green; text-align:center" *ngIf="pass">{{pass}}</h5>
+        <h5 style="color:red; text-align:center" *ngIf="fail">{{fail}}}</h5>
+
+
         <tr>
             <th>ID</th>
             <th>Title</th>
@@ -13,7 +20,10 @@
             <th>CPU</th>
             <th>Memory</th>
             <th>Display</th>
-            <th class="text-center">Action</th>
+            <th>Short_Desc</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
+
         </tr>
     </thead>
             <tr *ngFor="let item of product">
@@ -26,9 +36,16 @@
                 <td>{{item.cpu}}</td>
                 <td>{{item.memory}}gb</td>
                 <td>{{item.display}}</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' ><span class="glyphicon glyphicon-edit"></span> Edit</a> <span></span> <span></span><a  class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              
+                <td>{{item.short_desc}}</td>
+                <td class="text-center"><a  [routerLink]="['/update', item._id]" class='btn btn-info btn-xs' ><span class="glyphicon glyphicon-edit"></span> Edit</a> <span></span> 
+                <td class="text-center"><a  (click)="delete(item._id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+
+          
             </tr>
           
     </table>
     </div>
+    <button style="max-width: 100% !important;" class="btn btn-success" routerLink="/insert"> <b>+</b> Add new product</button>
+
 </div>

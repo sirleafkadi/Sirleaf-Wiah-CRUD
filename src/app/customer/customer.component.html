@@ -1,0 +1,41 @@
+<div class="container">
+
+    <h4 style="text-align: center !important; margin-top: 3%;">Manage Customer</h4>
+
+
+<div class="row col-md-12 col-12 custyle">
+<table class="table table-striped custab">
+<thead> 
+    <h5 style="color:green; text-align:center" *ngIf="pass">{{pass}}</h5>
+    <h5 style="color:red; text-align:center" *ngIf="fail">{{fail}}}</h5>
+
+
+
+
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th class="text-center">Edit</th>
+        <th class="text-center">Delete</th>
+
+    </tr>
+</thead>
+        <tr *ngFor="let cus of customer">
+            <td>{{cus._id}}</td>
+            <td>{{cus.name}}</td>
+            <td>{{cus.Password}}</td>
+            <td>{{cus.email}}</td>
+            <td class="text-center"><a  [routerLink]="['/update_cus', cus._id]" class='btn btn-info btn-xs' ><span class="glyphicon glyphicon-edit"></span> Edit</a> <span></span> 
+            <td class="text-center"><a  (click)="delete(cus._id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+
+      
+        </tr>
+      
+</table>
+</div>
+<button style="max-width: 100% !important;" class="btn btn-success" routerLink="/new_cus"> <b>+</b> Add new Customer</button>
+
+</div>

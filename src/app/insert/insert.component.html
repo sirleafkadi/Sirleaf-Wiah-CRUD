@@ -1,1 +1,137 @@
-<p>insert works!</p>
+<div class="container">
+
+    <div style="width:100%; margin:0 auto" class="form-sec">
+      <h4>  <a routerLink="insert"></a> Add New Product</h4>
+      
+     <form  [formGroup]="formFer"  name="form" id="qryform"  (ngSubmit)="insert()" novalidate>
+       <p style="color:green; text-align:center" *ngIf="pass"><br> {{pass}} </p>
+       <p style="color:red; text-align:center" *ngIf="fail"><br> {{fail}} </p>
+
+
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text"  class="form-control" id="name" placeholder=" Name" name="name" formControlName="name">
+          <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('name').touched && formFer.get('name').invalid">
+          <p style="color:red; display:inline" *ngIf="formFer.get('name').errors.required">Name is Empty</p>
+        </div>
+        </div>
+       
+        
+        <div class="form-group">
+          <label>Price:</label>
+          <input type="text" class="form-control" id="phone" placeholder=" Price" name="price" formControlName="price">
+
+          <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('price').touched && formFer.get('price').invalid">
+          <p style="color:red; display:inline" *ngIf="formFer.get('price').errors.required">Price is Empty</p>
+        </div>
+
+        </div>
+      
+        <div class="form-group">
+            <label>Descrption:</label>
+            <input type="text" class="form-control" id="phone" placeholder=" Desc" name="price" formControlName="desc">
+  
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('desc').touched && formFer.get('desc').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('desc').errors.required">Description is Empty</p>
+          </div>
+  
+          </div>
+          
+            <div class="form-group">
+            <label>Short Descrption:</label>
+            <input type="text" class="form-control" id="phone" placeholder=" Short_Desc" name="price" formControlName="short_desc">
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('short_desc').touched && formFer.get('short_desc').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('short_desc').errors.required">Short Descrption is Empty</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label>Image Url:</label>
+            <input type="text" class="form-control" id="phone" placeholder=" Image" name="price" formControlName="img">
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('img').touched && formFer.get('img').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('img').errors.required">url is Empty</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label>Category:</label>
+            <select class="form-control" id="sel1" formControlName="category_id">
+              <option value="{{cat._id}}" *ngFor="let cat of category">{{cat.name}}</option>
+            </select>
+              <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('category_id').touched && formFer.get('category_id').invalid">
+                <p style="color:red; display:inline" *ngIf="formFer.get('category_id').errors.required">Category is Empty</p>
+              </div>
+  
+          </div>
+
+
+          <div class="form-group">
+            <label>Type:</label>
+            <select class="form-control" id="sel1" formControlName="type">
+                <option disabled>Select</option>
+                <option value="true">Phone</option>
+                <option value="false">Laptop</option>
+              </select>
+              <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('type').touched && formFer.get('type').invalid">
+                <p style="color:red; display:inline" *ngIf="formFer.get('type').errors.required">Type is Empty</p>
+              </div>
+  
+          </div>
+          
+
+          <div class="form-group">
+            <label>Quantity:</label>
+            <input type="text" class="form-control" id="phone" placeholder=" Quantity" name="price" formControlName="quantity">
+  
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('quantity').touched && formFer.get('quantity').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('quantity').errors.required">Quantity is Empty</p>
+          </div>
+  
+          </div>
+
+        <div class="form-group">
+            <label>Year:</label>
+            <input type="text"  class="form-control" id="name" placeholder=" Year" name="name" formControlName="year">
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('name').touched && formFer.get('year').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('year').errors.required">Year is Empty</p>
+          </div>
+          </div>
+
+        <div class="form-group">
+            <label>Model:</label>
+            <input type="text" class="form-control" id="name" placeholder="Model" name="subject"  formControlName="model">
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('model').touched && formFer.get('model').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('model').errors.required">Model is Required</p>
+            </div>
+          </div>
+         
+          <div class="form-group">
+            <label>CPU:</label>
+            <input type="text" class="form-control" id="name" placeholder="Cpu" name="subject" formControlName="cpu">
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('cpu').touched && formFer.get('cpu').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('cpu').errors.required">CPU is Required</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Memory:</label>
+            <input type="text" class="form-control" id="name" placeholder="Memory" name="subject" formControlName="memory">
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('memory').touched && formFer.get('memory').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('memory').errors.required">Memory is Required</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Display:</label>
+            <input type="text" class="form-control" id="name" placeholder="Display" name="subject"  formControlName="display">
+            <div style="display:inline" class="form-control-feed-back"  *ngIf="formFer.get('display').touched && formFer.get('display').invalid">
+            <p style="color:red; display:inline" *ngIf="formFer.get('display').errors.required">Display is Required</p>
+            </div>
+          </div>
+          <input type="submit" class="btn btn-default" value="Submit" [disabled]="formFer.invalid" >
+      </form>
+      </div>
+    
+        
+    
+    </div>

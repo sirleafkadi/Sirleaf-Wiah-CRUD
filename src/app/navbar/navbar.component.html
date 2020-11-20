@@ -7,12 +7,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" >Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link"  >Category</a>
-        <a class="nav-item nav-link"  >Product</a>
-        <a class="nav-item nav-link"  >Customer</a>
-        <a class="nav-item nav-link"  >logout</a>
-        <a class="nav-item nav-link"   >login</a>
+        <a class="nav-item nav-link active" routerLink="home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" routerLink="home" *ngIf="islogin" >Product</a>
+        <a class="nav-item nav-link"  routerLink="cus_home"  *ngIf="islogin" >Customer</a>
+        <a class="nav-item nav-link" *ngIf="islogin" routerLink="/login" >logout </a>
+        <a class="nav-item nav-link"    *ngIf="!islogin">login</a>
         
 
       
