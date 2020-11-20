@@ -14,7 +14,6 @@ import { DeleteComponent } from './delete/delete.component';
 import { InsertComponent } from './insert/insert.component';
 import { CustomerComponent } from './customer/customer.component';
 import { UpdateCusComponent } from './update-cus/update-cus.component';
-import { DeleteCusComponent } from './delete-cus/delete-cus.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     InsertComponent,
     CustomerComponent,
     UpdateCusComponent,
-    DeleteCusComponent,
     AddCustomerComponent
   ],
   imports: [

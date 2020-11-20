@@ -31,7 +31,7 @@ export class CustomerComponent implements OnInit {
 
     if(confirm("Do you want to delete?")){
 
-    this.user_service.update_cus(id).subscribe(data=>{
+    this.user_service.delete_cus(id).subscribe(data=>{
     this.confirm=data
       console.log(id);
       if(!this.confirm.delete){

@@ -8,7 +8,7 @@
         <form  [formGroup]="formFer" class="form-content" (ngSubmit)="add()" novalidate>
                     <p style="color:red; text-align:center" *ngIf="not_match">Password not match</p>
                     <p style="color:green; text-align:center" *ngIf="registered">Successfully Registered, you're being redirected........... </p>
-                    <p style="color:red; tex-align:center" *ngIf="error">Sorry, we're experincing a database error, </p>
+                    <p style="color:red; tex-align:center" *ngIf="error">Registeration faild, email exist in database or invalid submission! </p>
 
                    
 

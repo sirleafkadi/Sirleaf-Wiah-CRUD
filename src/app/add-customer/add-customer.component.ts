@@ -77,7 +77,8 @@ export class AddCustomerComponent implements OnInit {
                }, 2300);
 
             }else{ console.log("Unable to register") }
-            this.registered =true;
+            this.registered =false;
+            this.error=true;
             
             }
              
